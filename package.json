@@ -1,7 +1,13 @@
 {
-  "name": "react-avancado-boilerplate",
+  "name": "boilerplate-next-ed",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "react",
+    "boilerplate"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,43 +15,61 @@
     "lint": "eslint src --max-warnings=0",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'",
     "test:ci": "jest --runInBand",
     "generate": "yarn plop --plopfile generators/plopfile.js",
-    "postinstall": "husky install",
     "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
-      "yarn test --findRelatedTests --bail"
+      "yarn test --findRelatedTests --bail --passWithNoTests",
+      "yarn prettier"
     ]
   },
   "dependencies": {
-    "next": "^12.1.4",
-    "next-pwa": "^5.4.6",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "next": "^12.1.6",
+    "next-pwa": "^5.5.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
-    "@types/react": "^17.0.43",
-    "@types/styled-components": "^5.1.24",
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@typescript-eslint/parser": "^5.18.0",
-    "eslint": "^8.12.0",
-    "eslint-config-next": "^12.1.4",
+    "@types/node": "^17.0.38",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "@types/styled-components": "^5.1.25",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
+    "eslint-config-next": "^12.1.6",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
-    "husky": "^7.0.4",
-    "jest": "^27.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
     "jest-styled-components": "^7.0.8",
-    "lint-staged": "^12.3.7",
-    "plop": "^3.0.5",
+    "lint-staged": "^13.0.0",
+    "plop": "^3.1.0",
     "prettier": "^2.6.2",
-    "typescript": "^4.6.3",
-    "webpack": "^5.71.0"
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "typescript": "^4.7.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

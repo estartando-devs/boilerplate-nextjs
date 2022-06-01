@@ -1,13 +1,12 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-
 import GlobalStyles from 'styles/global';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>NextJS ED - Boilerplate</title>
+        <title>Boilerplate NextJS - Estartando Devs</title>
         <meta name="theme-color" content="#06092B" />
         <meta
           name="description"
